@@ -85,7 +85,7 @@ GetLoanPayments[c_,i_,t_,e_, l_]:=PadRight[#,l]&/@LoanPaymentInterestPrincipal[c
 
 
 GetNPV[data_]:=Module[{},
-	irr=0.1;
+	irr=data["IRR"];
 	{pro, pri} = data["Products"][[{2,3}]];
 	{mpl,mat,mpr}=data["Material Costs"][[{1,2,3}]];
 	{emp, sal} = data["Salary Costs"][[{2,3}]];
@@ -132,9 +132,9 @@ GetNPV[data_]:=Module[{},
 	<|"OPEX"->opexTable,"NPV"->NPV[AV,irr]|>
 ]
 
-MFSP[mfsp0_?NumericQ,data_]:=Block[{mfsp = mfsp0}, GetNPV[data]["NPV"]];
+MPSP[mpsp0_?NumericQ,data_]:=Block[{mpsp = mpsp0}, GetNPV[data]["NPV"]];
 
-GetMFSP[data_]:=First[FindRoot[MFSP[x, data],{x,1,0,10}],{0,1*^9}][[2]];
+GetMPSP[data_]:=First[FindRoot[MPSP[x, data],{x,1,0,10}],{0,1*^9}][[2]];
 
 
 PositionsOfTopCosts::usage="Returns the positions of the top t values v";
