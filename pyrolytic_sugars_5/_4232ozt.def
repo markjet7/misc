@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _4232ozt.inm
+MODNAME: apmain
+RUNID: _4232ozt
+NEW_RUNID: _4232ozt
+OLD_RUNID: _4232ozt
+PDF: _4232ozt.appdf
+USERNAME: markmw
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V10.0\Engine\xeq\apmain
+SPONLY:
